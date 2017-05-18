@@ -2,44 +2,35 @@
   'React ES6 Component':
     'prefix': 'rc'
     'body': """
-      import React from 'react';
-	  import PropTypes from 'prop-types';
-      export default class ${1:MyComponent} extends React.Component {
+      import React, { Component} from 'react';
+      import PropTypes from 'prop-types';
+
+      export default class ${1:MyComponent} extends Component {
         render() {
-          return (${2:
-		  <div>
-		  MyComponent
-		  </div>
-		  });
+          return (${2:<div>
+          MyComponent</div>
+          });
         }
       }
-
       ${1}.propTypes = {
       };
-
     """
   'React ES6 Component with Constructor':
     'prefix': 'rcc'
     'body': """
-      import React, {PropTypes} from 'react';
-	  import PropTypes from 'prop-types';
+      import React, { Component} from 'react';
+      import PropTypes from 'prop-types';
 
-      export default class ${1:MyComponent} extends React.Component {
+      export default class ${1:MyComponent} extends Component {
         constructor(props) {
           super(props);
         }
-
         render() {
-          return (${2: 
-		  <div>
-			MyComponent
-		  </div>});
+          return (${2:<div>MyComponent</div>});
         }
       }
-
       ${1}.propTypes = {
       };
-
     """
   'React ES6 Constructor':
     'prefix': 'rconst'
@@ -48,22 +39,18 @@
         super(props);
         ${1}
       }
-
     """
   'React ES6 Functional Component':
     'prefix': 'rfunc'
     'body': """
       import React from 'react';
-	  import PropTypes from 'prop-types';
+      import PropTypes from 'prop-types';
 
-      const ${1} = (props) => {
-        return (${2: 
-		<div>
-		  MyComponent
-		 </div>});
+      export default function ${1}(props) {
+        return (
+          ${2:<div>MyComponent</div>}
+        );
       }
-
-	  export default ${1}
       ${1}.propTypes = {
       };
     """
